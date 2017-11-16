@@ -1,3 +1,0 @@
-inputC()
- - Uncaught TypeError: Cannot read property 'addEventListener' of null
- -- Are all the ids in your ic object the same value as the ids set on your html elements?
