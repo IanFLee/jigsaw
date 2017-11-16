@@ -2,6 +2,34 @@ function cl(x) {
   console.log(x);
 }
 
+function makeIC(ic){
+
+    // for each element in the ic object
+    for (let id in ic) {
+     var el = document.getElementById(id);
+      
+      // fns is an object with input type keys and function values
+      var fns = ic[id];
+      
+      // for each input type in the object
+      for (let type in fns) {
+      
+        // arr is array of functions to add for that input type
+        var arr = fns[type];
+        
+        for (let theFn in arr) {
+        
+        // FN is function
+          var FN = arr[theFn];
+        el.addEventListener(type, FN);
+      } 
+        // Add listener to element that will update model or view
+      }
+  
+    }
+  }
+  
+
 function listenFor(el, type, fn) {
    // var id = document.getElementById(id)
     el.addEventListener(type, fn);
