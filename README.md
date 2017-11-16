@@ -6,6 +6,8 @@ A library of MVC-type functions
 
 cl(); is console.log();
 
+cl('hi');
+
 ----
 
 <h3>listenAt(), listenFor(), and makeIC()</h3>
