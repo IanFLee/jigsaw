@@ -18,7 +18,7 @@ The following three functions are all augmentations of addEventListener.
 
  - listenAt() is for DOM elements already present in the HTML, not the JS (document.getElementById(id)).
  - listenFor() is for DOM elements that have been created dynamically in the JS (document.createElement(type)).
- - makeIC() is meant for adding larger amounts of event listeners. This currently only works on elements already present (getElementById).
+ - inputC() is meant for adding larger amounts of event listeners. This currently only works on elements already present (getElementById).
 
 Each is functionally equivalent but preferred based on circumstances.
 
