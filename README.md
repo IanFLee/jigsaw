@@ -25,9 +25,10 @@ Each is functionally equivalent but preferred based on circumstances.
 # listenAt(id, type, fn) 
 
 usage:
-
-```<button id="btn">click me</button>
-listenAt('btn', 'click', function() {alert('clicked')});```
+```
+<button id="btn">click me</button>
+listenAt('btn', 'click', function() {alert('clicked')});
+```
 
 listenAt() is for adding individual event listeners.<br>
 id is the id of the element in the HTML.<br>
@@ -36,8 +37,10 @@ fn is the callback function called on the input event.<br>
 
 equivalent to:
 
-```var el = document.getElementById(id);
-el.addEventListener(type, fn);```
+```
+var el = document.getElementById(id);
+el.addEventListener(type, fn);
+```
 
 ----
 # listenFor(el, type, fn)
