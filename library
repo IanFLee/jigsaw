@@ -53,6 +53,7 @@ var doc = {
     switch(type) {
       case 'p' : type = 'p'; break;
       case 'i' : type = 'img'; break;
+      case 'btn' : type = 'button'; break;
         default : type = 'div'; break;
     }
       return document.createElement(type);
@@ -64,6 +65,7 @@ var doc = {
     switch(type) {
       case 'p' : type = 'p'; break;
       case 'i' : type = 'img'; break;
+      case 'btn' : type = 'button'; break;
         default : type = 'div'; break;
     }
     var child = document.createElement(type);
