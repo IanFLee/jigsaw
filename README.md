@@ -22,6 +22,28 @@ The following three functions are all augmentations of addEventListener.
 
 Each is functionally equivalent but preferred based on circumstances.
 
+# listen(el, type, fn)
+
+usage:
+
+```
+// where el holds a DOM Element
+listen(el, 'click', function() {alert('clicked')});
+```
+
+<h5>listen() is for adding individual event listeners.<br></h5>
+
+el is the dynamically created DOM Element<br>
+type refers to a type of input event.<br>
+fn is the callback function called on the input event.<br>
+
+is equivalent to:
+```
+// where el holds a DOM Element
+el.addEventListener(type, fn);
+```
+----
+
 ----
 # listenAt(id, type, fn) 
 
@@ -31,11 +53,7 @@ usage:
 listenAt('btn', 'click', function() {alert('clicked')});
 ```
 
-<h5>listenAt() is for adding individual event listeners.<br></h5>
-
-id is the id of the element in the HTML.<br>
-type refers to a type of input event.<br>
-fn is the callback function called on the input event.<br>
+listenAt() is also for adding individual event listeners. This is the same as above, except that id refers to an HTML element declared inside the HTML.
 
 is equivalent to:
 
@@ -45,23 +63,7 @@ el.addEventListener(type, fn);
 ```
 
 ----
-# listenFor(el, type, fn)
 
-usage:
-
-```
-// where el holds a DOM Element
-listenFor(el, 'click', function() {alert('clicked')});
-```
-
-listenFor() is also for adding individual event listeners. This is the same as above, except that el refers to a DOM node declared inside the JS.
-
-is equivalent to:
-```
-// where el holds a DOM Element
-el.addEventListener(type, fn);
-```
-----
 # inputC(ic)
 
 <h5>inputC() is for adding multiple event listeners.</h5>
