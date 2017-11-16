@@ -1,0 +1,6 @@
+1) div.cc - Extend object prototype of HTMLElement and add function to create and append child simultaneously?
+1a) div.<attr> - Extend object prototype of HTMLElement to change height, width, etc. attributes through HTMLElement.setAttribute
+
+2) Add listener on every id in the makeIC function to call update model or view
+
+3) Expand the post() function to append element to chosen destination node
