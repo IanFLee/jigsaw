@@ -12,6 +12,15 @@ function listenAt(id, type, fn) {
   id.addEventListener(type, fn);
 }
 
+function setAttr(el, attr, value) {
+  el.setAttribute(attr, value);
+}
+
+function post(el) {
+  document.body.innerHTML = '';
+  document.body.appendChild(el);
+}
+
 var doc = {
   ce : function(type) {
     var el;
@@ -24,5 +33,8 @@ var doc = {
   },
   ctn : function(text) {
     return document.createTextNode(text);
-  }
+  },
+  ac : function(el, type) {
+    var child = document.createElement(type);
+    el.appendChild(child);
 };
