@@ -23,18 +23,24 @@ function post(el) {
 
 var doc = {
   ce : function(type) {
-    var el;
     switch(type) {
-      case 'p' : el = 'p'; break;
-      case 'i' : el = 'img'; break;
-        default : el = 'div'; break;
+      case 'p' : type = 'p'; break;
+      case 'i' : type = 'img'; break;
+        default : type = 'div'; break;
     }
-      return document.createElement(el);
+      return document.createElement(type);
   },
   ctn : function(text) {
     return document.createTextNode(text);
   },
   ac : function(el, type) {
+    switch(type) {
+      case 'p' : type = 'p'; break;
+      case 'i' : type = 'img'; break;
+        default : type = 'div'; break;
+    }
     var child = document.createElement(type);
     el.appendChild(child);
+    return child;
+}
 };
