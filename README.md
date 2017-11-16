@@ -4,7 +4,7 @@ A library of MVC-type functions
 ----
 # cl()
 
-console.log();
+cl(); is console.log();
 ----
 
 <h3>listenAt(), listenFor(), and makeIC()</h3>
