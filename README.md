@@ -109,6 +109,26 @@ var ic = {
   }
 };
 ```
+<h5>inputC() works well with models</h5>
+
+```
+var model = {color: 'black'};
+
+var changeColor = function() {
+ model.color = 'gold';
+};
+
+var ic = {
+  'colorBox' : {
+    'click' : {
+     changeColor : changeColor
+    }
+   } 
+ };
+ 
+ inputC(ic);
+```
+
 ----
 
 # The doc object
@@ -134,7 +154,8 @@ parent.appendChild(document.createElement(type));
 
 # post(el)
 
-Empties the document body. Takes a dynamically created HTMLElement and appends it to the empty document.
+Empties the document body. Takes a dynamically created HTMLElement and appends it to the empty document.<br>
+Mainly used to publish a root HTMLElement node to the DOM.
 
 is equivalent to:
 
