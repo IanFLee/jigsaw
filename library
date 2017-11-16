@@ -1,0 +1,28 @@
+function cl(x) {
+  console.log(x);
+}
+
+function listenFor(el, type, fn) {
+   // var id = document.getElementById(id)
+    el.addEventListener(type, fn);
+}
+
+function listenAt(id, type, fn) {
+  var id = document.getElementById(id)
+  id.addEventListener(type, fn);
+}
+
+var doc = {
+  ce : function(type) {
+    var el;
+    switch(type) {
+      case 'p' : el = 'p'; break;
+      case 'i' : el = 'img'; break;
+        default : el = 'div'; break;
+    }
+      return document.createElement(el);
+  },
+  ctn : function(text) {
+    return document.createTextNode(text);
+  }
+};
