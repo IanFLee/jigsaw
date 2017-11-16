@@ -33,7 +33,7 @@ listen(el, 'click', function() {alert('clicked')});
 
 <h5>listen() is for adding individual event listeners.<br></h5>
 
-el is the dynamically created DOM Element<br>
+el is the dynamically created DOM Element.<br>
 type refers to a type of input event.<br>
 fn is the callback function called on the input event.<br>
 
@@ -42,7 +42,7 @@ is equivalent to:
 // where el holds a DOM Element
 el.addEventListener(type, fn);
 ```
-----
+
 
 ----
 # listenAt(id, type, fn) 
@@ -80,11 +80,13 @@ It takes an 'input controller' object and uses the values to attach event listen
 An input controller looks like this:
 
 ```
+// functions for ic object
 var turnRed = function() { /*turn red*/ };
 var save = function() { /*save*/ };
 var turnBorderBlue = function() { /*turn border blue*/ };
 var login = function() { /*login*/ };
 
+// ic object declaration
 var ic = {
   'saveButton' : {
     click : {
