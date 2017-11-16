@@ -4,9 +4,9 @@ A library of MVC-type functions
 ----
 # cl()
 
-cl(); is console.log();
+```cl();``` is ```console.log();```
 
-cl('hi');
+```cl('hi');```
 
 ----
 
@@ -24,16 +24,20 @@ Each is functionally equivalent but preferred based on circumstances.
 ----
 # listenAt(id, type, fn) 
 
-<button id="btn">click me</button>
-listenAt('btn', 'click', function() {alert('clicked')});
+usage:
 
-listenAt() is for adding individual event listeners.
-id is the id of the element in the HTML.
-type refers to a type of input event.
-fn is the callback function called on the input event.
+```<button id="btn">click me</button>
+listenAt('btn', 'click', function() {alert('clicked')});```
 
-var el = document.getElementById(id);
-el.addEventListener(type, fn);
+listenAt() is for adding individual event listeners.<br>
+id is the id of the element in the HTML.<br>
+type refers to a type of input event.<br>
+fn is the callback function called on the input event.<br>
+
+equivalent to:
+
+```var el = document.getElementById(id);
+el.addEventListener(type, fn);```
 
 ----
 # listenFor(el, type, fn)
