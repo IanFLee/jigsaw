@@ -5,6 +5,7 @@ A library of MVC-type functions
 # cl()
 
 cl(); is console.log();
+
 ----
 
 <h3>listenAt(), listenFor(), and makeIC()</h3>
@@ -31,6 +32,7 @@ fn is the callback function called on the input event.
 
 var el = document.getElementById(id);
 el.addEventListener(type, fn);
+
 ----
 # listenFor(el, type, fn)
 
@@ -40,6 +42,7 @@ listenFor(el, 'click', function() {alert('clicked')});
 listenFor() is also for adding individual event listeners. This is the same as above, except that el refers to a DOM node declared inside the JS.
 
 el.addEventListener(type, fn);
+
 ----
 # makeIC(ic)
 
