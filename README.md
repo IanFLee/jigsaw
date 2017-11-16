@@ -63,7 +63,14 @@ el.addEventListener(type, fn);
 ----
 # inputC(ic)
 
-inputC() is for adding multiple event listeners.
+<h5>inputC() is for adding multiple event listeners.</h5>
+
+usage:
+```
+var f = function(){};
+var ic = { /*input controller object*/ };
+inputC(ic);
+```
 
 It takes an 'input controller' object and uses the values to attach event listeners to DOM nodes.
 
@@ -108,9 +115,20 @@ var ic = {
 
 The doc object quickens certain document processes with shorthand. The current list of these is:
 
-```doc.ce(type);``` --- is the same as --- ```document.createElement(type);```<br>
-```doc.ctn(text);``` --- is the same as --- ```document.createTextNode(text);```<br>
-```doc.ac(parent, type);``` --- is the same as --- ```parent.appendChild(document.createElement(type));```
+```
+doc.ce(type);
+document.createElement(type);
+```
+----
+```
+doc.ctn(text);
+document.createTextNode(text);
+```
+----
+```
+doc.ac(parent, type);
+parent.appendChild(document.createElement(type));
+```
 
 ----
 
