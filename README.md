@@ -50,7 +50,7 @@ el.addEventListener(type, fn);
 usage:
 
 ```
-var el = document.createElement('button');
+// where el holds a DOM Element
 listenFor(el, 'click', function() {alert('clicked')});
 ```
 
@@ -58,6 +58,7 @@ listenFor() is also for adding individual event listeners. This is the same as a
 
 is equivalent to:
 ```
+// where el holds a DOM Element
 el.addEventListener(type, fn);
 ```
 ----
