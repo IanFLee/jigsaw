@@ -10,7 +10,7 @@ A library of MVC-type functions
 
 ----
 
-<h1>listenAt(), listenFor(), and makeIC()</h1>
+<h1>listenAt(), listenFor(), and inputC()</h1>
 
 <h3>Similarities and Differences </h3>
 
