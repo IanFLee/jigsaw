@@ -6,3 +6,5 @@
 3) Expand the post() function to append element to chosen destination node
 
 4) Expand inputC() function to accept ic object with dynamically created ids
+
+5) Create css() function which takes a styles object and applies styles to dynamically created HTML Elements
