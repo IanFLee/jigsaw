@@ -144,15 +144,25 @@ The doc object quickens certain document processes with shorthand. The current l
 doc.ce(type);
 document.createElement(type);
 ```
+If doc.ce() is not given an argument, type defaults to 'div'.
+
 ----
 ```
 doc.ctn(text);
 document.createTextNode(text);
 ```
+
 ----
 ```
 doc.ac(parent, type);
 parent.appendChild(document.createElement(type));
+```
+If doc.ac(parent) is not given a type argument, type defaults to 'div'.
+
+----
+```
+doc.atn(parent, text);
+parent.appendChild(document.createTextNode(text));
 ```
 
 ----
