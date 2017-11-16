@@ -31,7 +31,6 @@ function makeIC(ic){
   
 
 function listenFor(el, type, fn) {
-   // var id = document.getElementById(id)
     el.addEventListener(type, fn);
 }
 
