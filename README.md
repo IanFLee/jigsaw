@@ -30,12 +30,13 @@ usage:
 listenAt('btn', 'click', function() {alert('clicked')});
 ```
 
-listenAt() is for adding individual event listeners.<br>
+<h5>listenAt() is for adding individual event listeners.<br></h5>
+
 id is the id of the element in the HTML.<br>
 type refers to a type of input event.<br>
 fn is the callback function called on the input event.<br>
 
-equivalent to:
+is equivalent to:
 
 ```
 var el = document.getElementById(id);
@@ -45,13 +46,19 @@ el.addEventListener(type, fn);
 ----
 # listenFor(el, type, fn)
 
+usage:
+
+```
 var el = document.createElement('button');
 listenFor(el, 'click', function() {alert('clicked')});
+```
 
 listenFor() is also for adding individual event listeners. This is the same as above, except that el refers to a DOM node declared inside the JS.
 
+is equivalent to:
+```
 el.addEventListener(type, fn);
-
+```
 ----
 # makeIC(ic)
 
@@ -61,6 +68,7 @@ It takes an input controller object and uses the values to attach event listener
 
 An input controller looks like this:
 
+```
 var turnRed = function() { /*turn red*/ };
 var save = function() { /*save*/ };
 var turnBorderBlue = function() { /*turn border blue*/ };
@@ -81,9 +89,10 @@ var ic = {
       login : login
     }
 };
+```
 
 This follow the structure:
-
+```
 var ic = {
   <id of element to which will the listener will be added> : {
     <event type> : {
@@ -91,16 +100,16 @@ var ic = {
     }
   }
 };
-
+```
 ----
 
 # The doc object
 
 The doc object quickens certain document processes with shorthand. The current list of these is:
 
-doc.ce(type); --- is the same as --- document.createElement(type);
-doc.ctn(text); --- is the same as --- document.createTextNode(text);
-doc.ac(parent, type); --- is the same as --- parent.appendChild(document.createElement(type));
+```doc.ce(type);``` --- is the same as --- ```document.createElement(type);```
+```doc.ctn(text);``` --- is the same as --- ```document.createTextNode(text);```
+```doc.ac(parent, type);``` --- is the same as --- ```parent.appendChild(document.createElement(type));```
 
 ----
 
@@ -108,5 +117,9 @@ doc.ac(parent, type); --- is the same as --- parent.appendChild(document.createE
 
 Empties the document body. Takes a dynamically created HTMLElement and appends it to the empty document.
 
+is equivalent to:
+
+```
 document.body.innerHTML = '';
 document.body.appendChild(el);
+```
