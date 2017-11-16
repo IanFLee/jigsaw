@@ -61,11 +61,11 @@ is equivalent to:
 el.addEventListener(type, fn);
 ```
 ----
-# makeIC(ic)
+# inputC(ic)
 
-makeIC() is for adding multiple event listeners.
+inputC() is for adding multiple event listeners.
 
-It takes an input controller object and uses the values to attach event listeners to DOM nodes.
+It takes an 'input controller' object and uses the values to attach event listeners to DOM nodes.
 
 An input controller looks like this:
 
@@ -108,8 +108,8 @@ var ic = {
 
 The doc object quickens certain document processes with shorthand. The current list of these is:
 
-```doc.ce(type);``` --- is the same as --- ```document.createElement(type);```
-```doc.ctn(text);``` --- is the same as --- ```document.createTextNode(text);```
+```doc.ce(type);``` --- is the same as --- ```document.createElement(type);```<br>
+```doc.ctn(text);``` --- is the same as --- ```document.createTextNode(text);```<br>
 ```doc.ac(parent, type);``` --- is the same as --- ```parent.appendChild(document.createElement(type));```
 
 ----
