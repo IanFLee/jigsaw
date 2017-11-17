@@ -40,26 +40,26 @@ function post(el) {
   document.body.innerHTML = '';
   document.body.appendChild(el);
 }
-var doc = {
-  ce : function(type) {
-    switch(type) {
+function htmlElShort(type) {
+  switch(type) {
       case 'p' : type = 'p'; break;
       case 'i' : type = 'img'; break;
       case 'btn' : type = 'button'; break;
+      case 'in' : type = 'input'; break;
         default : type = 'div'; break;
     }
+  return type;
+}
+var doc = {
+  ce : function(type) {
+      type = htmlElShort(type);
       return document.createElement(type);
   },
   ctn : function(text) {
     return document.createTextNode(text);
   },
   ac : function(el, type) {
-    switch(type) {
-      case 'p' : type = 'p'; break;
-      case 'i' : type = 'img'; break;
-      case 'btn' : type = 'button'; break;
-        default : type = 'div'; break;
-    }
+    type = htmlElShort(type);
     var child = document.createElement(type);
     el.appendChild(child);
     return child;
@@ -67,6 +67,11 @@ var doc = {
   atn : function(el, text) {
     var text = document.createTextNode(text);
     el.appendChild(text);
+  },
+  amc : function(el, arr) {
+    for (var child of arr) {
+      el.appendChild(child);
+    }
   },
   class : function(name) {
     return document.getElementsByClassname(name);
@@ -79,7 +84,9 @@ function idListen(id, type,fn) {
   doc.id(id).listenAt(id, type, fn);
 }
 function ceListen(elmType, evtType, fn) {
-  doc.ce(elmType).listen(evtType, fn);
+  var x = doc.ce(elmType);
+  listen(x, evtType, fn);
+  return x;
 }
 function borderDiv(color, width, height) {
   var elm = doc.ce();
