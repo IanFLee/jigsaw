@@ -1,9 +1,7 @@
 function cl(x) {
   console.log(x);
 }
-
-function makeIC(ic){
-
+function inputC(ic){
     // for each element in the ic object
     for (let id in ic) {
      var el = document.getElementById(id);
@@ -18,7 +16,7 @@ function makeIC(ic){
         var arr = fns[type];
         
         for (let theFn in arr) {
-        
+        //
         // FN is function
           var FN = arr[theFn];
         el.addEventListener(type, FN);
@@ -28,26 +26,20 @@ function makeIC(ic){
   
     }
   }
-  
-
-function listenFor(el, type, fn) {
+function listen(el, type, fn) {
     el.addEventListener(type, fn);
 }
-
 function listenAt(id, type, fn) {
   var id = document.getElementById(id)
   id.addEventListener(type, fn);
 }
-
 function setAttr(el, attr, value) {
   el.setAttribute(attr, value);
 }
-
 function post(el) {
   document.body.innerHTML = '';
   document.body.appendChild(el);
 }
-
 var doc = {
   ce : function(type) {
     switch(type) {
@@ -71,5 +63,28 @@ var doc = {
     var child = document.createElement(type);
     el.appendChild(child);
     return child;
-}
+},
+  atn : function(el, text) {
+    var text = document.createTextNode(text);
+    el.appendChild(text);
+  },
+  class : function(name) {
+    return document.getElementsByClassname(name);
+  },
+  id : function(id) {
+    return document.getElementById(id);
+  }
 };
+function idListen(id, type,fn) {
+  doc.id(id).listenAt(id, type, fn);
+}
+function ceListen(elmType, evtType, fn) {
+  doc.ce(elmType).listen(evtType, fn);
+}
+function borderDiv(color, width, height) {
+  var elm = doc.ce();
+  elm.style.border = 'solid '+color;
+  elm.style.width = width+'vw';
+  elm.style.height = height+'vh';
+  return elm;
+}
