@@ -80,9 +80,6 @@ var doc = {
     return document.getElementById(id);
   }
 };
-function idListen(id, type,fn) {
-  doc.id(id).listenAt(id, type, fn);
-}
 function ceListen(elmType, evtType, fn) {
   var x = doc.ce(elmType);
   listen(x, evtType, fn);
