@@ -1,8 +1,10 @@
 # jigsaw
 A library of MVC-type functions
-
-<a href="#listen-listenat-and-inputc">listener functions</a>
-
+<ul>
+ <li><a href="#listen-listenat-and-inputc">listener functions make adding event listeners quicker and easier</a></li>
+ <li><a href="#the-doc-object">the doc object is shorthand for document functions</a></li>
+ <li><a href="#the-mdl-object">the mdl object is shorthand for dynamically creating Material Design Lite class elements</a></li>
+</ul>
 ----
 # cl()
 
@@ -169,10 +171,36 @@ Append multiple children simultaneously.
 This object provides shorthand for creating certain Material Design Lite class elements.
 
 ```
-
-
+var parentGrid = mdl.parentGrid('1000px');
+```
+Returns an mdl grid, setting the max-width;
 ----
-
+```
+var childGrid = mdl.childGrid();
+```
+----
+```
+var cell = mdl.col(12, 6, 3);
+```
+Takes column sized for desktop, tablet and phone and eturns an mdl cell.
+----
+```
+var textfield = mdl.input('passwordInput', 'What is the super secret password?');
+```
+Takes an element id and label text and returns an mdl textfield component such as:
+```
+<div class='mdl-textfield mdl-js-textfield mdl-cell--12-col'>
+  <input class='mdl-textfield__input' type='text' id='passwordInput'>
+  <label class='mdl-textfield__label'>What is the super secret password?</label>
+</div>
+```
+----
+```
+var multiLineTextfield = mdl.multiInput('novelInput', 'Tell us your life story', 20);
+```
+Is the same as above, but returns a multi-line textfield. The third argument sets the number of rows.
+----
+ ```
 
 # post(el)
 
