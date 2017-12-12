@@ -52,9 +52,6 @@ var doc = {
       type = htmlElShort(type);
       return document.createElement(type);
   },
-  ctn : function(text) {
-    return document.createTextNode(text);
-  },
   atn : function(el, text) {
     var text = document.createTextNode(text);
     el.appendChild(text);
@@ -104,7 +101,7 @@ var mdl = {
     return cell;
   },
   input: function(id, text) {
-  // Create MDL 'textfield' (text input)
+  // Create MDL 'textfield'/text input
     var div = document.createElement('div');
     div.className = "mdl-textfield mdl-js-textfield mdl-cell--12-col";
     var input = document.createElement('input');
