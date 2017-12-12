@@ -10,7 +10,7 @@ A library of MVC-type functions
 
 ----
 
-<h1>listenAt(), listenFor(), and inputC()</h1>
+<h1>listen(), listenAt(), and inputC()</h1>
 
 <h3>Similarities and Differences </h3>
 
@@ -138,33 +138,30 @@ var ic = {
 
 # The doc object
 
-The doc object quickens certain document processes with shorthand. The current list of these is:
+The doc object quickens certain document processes with shorthand.
 
 ```
 doc.ce(type);
 document.createElement(type);
 ```
 If doc.ce() is not given an argument, type defaults to 'div'.
-
+Use 'btn' for 'buttton' and 'in' for 'input'.
 ----
 ```
-doc.ctn(text);
-document.createTextNode(text);
+doc.atn(element, text);
+var text = document.createTextNode(text);
+element.appendChild(text);
 ```
-
+Create and append text node simultaneously.
 ----
 ```
-doc.ac(parent, type);
-parent.appendChild(document.createElement(type));
+doc.amc(parent, [array of children]);
+for (var child of arr) {
+      parent.appendChild(child);
+    }
 ```
-If doc.ac(parent) is not given a type argument, type defaults to 'div'.
-
+Append multiple children simultaneously.
 ----
-```
-doc.atn(parent, text);
-parent.appendChild(document.createTextNode(text));
-```
-
 ----
 
 # post(el)
