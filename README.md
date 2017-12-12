@@ -188,7 +188,7 @@ var childGrid = mdl.childGrid();
 ```
 var cell = mdl.col(12, 6, 3);
 ```
-Takes column sized for desktop, tablet and phone and eturns an mdl cell.
+Takes column sizes for desktop, tablet and phone and returns an mdl cell.
 
 ----
 ```
@@ -209,8 +209,6 @@ var multiLineTextfield = mdl.multiInput('novelInput', 'Tell us your life story',
 Is the same as above, but returns a multi-line textfield. The third argument sets the number of rows.
 
 ----
- ```
-
 # post(el)
 
 Empties the document body. Takes a dynamically created HTMLElement and appends it to the empty document.<br>
