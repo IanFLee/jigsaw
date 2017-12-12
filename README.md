@@ -150,6 +150,7 @@ document.createElement(type);
 ```
 If doc.ce() is not given an argument, type defaults to 'div'.
 Use 'btn' for 'buttton' and 'in' for 'input'.
+
 ----
 ```
 doc.atn(element, text);
@@ -157,6 +158,7 @@ var text = document.createTextNode(text);
 element.appendChild(text);
 ```
 Create and append text node simultaneously.
+
 ----
 ```
 doc.amc(parent, [array of children]);
@@ -165,6 +167,7 @@ for (var child of arr) {
     }
 ```
 Append multiple children simultaneously.
+
 ----
 
 # The mdl object
@@ -175,15 +178,18 @@ This object provides shorthand for creating certain Material Design Lite class e
 var parentGrid = mdl.parentGrid('1000px');
 ```
 Returns an mdl grid, setting the max-width;
+
 ----
 ```
 var childGrid = mdl.childGrid();
 ```
+
 ----
 ```
 var cell = mdl.col(12, 6, 3);
 ```
 Takes column sized for desktop, tablet and phone and eturns an mdl cell.
+
 ----
 ```
 var textfield = mdl.input('passwordInput', 'What is the super secret password?');
@@ -195,11 +201,13 @@ Takes an element id and label text and returns an mdl textfield component such a
   <label class='mdl-textfield__label'>What is the super secret password?</label>
 </div>
 ```
+
 ----
 ```
 var multiLineTextfield = mdl.multiInput('novelInput', 'Tell us your life story', 20);
 ```
 Is the same as above, but returns a multi-line textfield. The third argument sets the number of rows.
+
 ----
  ```
 
