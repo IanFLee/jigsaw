@@ -1,6 +1,8 @@
 # jigsaw
 A library of MVC-type functions
 
+<a href="#listen-listenat-and-inputc">listener functions</a>
+
 ----
 # cl()
 
@@ -42,7 +44,6 @@ is equivalent to:
 // where el holds a DOM Element
 el.addEventListener(type, fn);
 ```
-
 
 ----
 # listenAt(id, type, fn) 
@@ -162,7 +163,16 @@ for (var child of arr) {
 ```
 Append multiple children simultaneously.
 ----
+
+# The mdl object
+
+This object provides shorthand for creating certain Material Design Lite class elements.
+
+```
+
+
 ----
+
 
 # post(el)
 
