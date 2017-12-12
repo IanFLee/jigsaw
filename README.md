@@ -32,7 +32,7 @@ Each is functionally equivalent but preferred based on circumstances.
 usage:
 
 ```
-// where el holds a DOM Element
+var el = document.createElement('button');
 listen(el, 'click', function() {alert('clicked')});
 ```
 
@@ -44,7 +44,7 @@ fn is the callback function called on the input event.<br>
 
 is equivalent to:
 ```
-// where el holds a DOM Element
+var el = document.createElement('button');
 el.addEventListener(type, fn);
 ```
 
@@ -62,8 +62,9 @@ listenAt() is also for adding individual event listeners. This is the same as ab
 is equivalent to:
 
 ```
-var el = document.getElementById(id);
-el.addEventListener(type, fn);
+<button id="btn">click me</button>
+var el = document.getElementById('btn');
+el.addEventListener('click', function() {alert('clicked')});
 ```
 
 ----
@@ -146,6 +147,7 @@ The doc object quickens certain document processes with shorthand.
 
 ```
 doc.ce(type);
+is
 document.createElement(type);
 ```
 If doc.ce() is not given an argument, type defaults to 'div'.
@@ -154,6 +156,7 @@ Use 'btn' for 'buttton' and 'in' for 'input'.
 ----
 ```
 doc.atn(element, text);
+is
 var text = document.createTextNode(text);
 element.appendChild(text);
 ```
@@ -162,6 +165,7 @@ Create and append text node simultaneously.
 ----
 ```
 doc.amc(parent, [array of children]);
+is
 for (var child of arr) {
       parent.appendChild(child);
     }
