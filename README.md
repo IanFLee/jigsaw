@@ -5,6 +5,7 @@ A library of MVC-type functions
  <li><a href="#the-doc-object">the doc object is shorthand for document functions</a></li>
  <li><a href="#the-mdl-object">the mdl object is shorthand for dynamically creating Material Design Lite class elements</a></li>
 </ul>
+
 ----
 # cl()
 
