@@ -9,9 +9,8 @@ A library of MVC-type functions
 ----
 # cl()
 
-```cl();``` is ```console.log();```
 
-```cl('hi');```
+```function cl(x) { console.log(x); }```
 
 ----
 
@@ -21,8 +20,8 @@ A library of MVC-type functions
 
 The following three functions are all augmentations of addEventListener.
 
- - listenAt() is for DOM elements already present in the HTML, not the JS (document.getElementById(id)).
- - listenFor() is for DOM elements that have been created dynamically in the JS (document.createElement(type)).
+ - listenAt() is for DOM elements already present in the HTML.
+ - listenFor() is for DOM elements that have been created dynamically in the JS.
  - inputC() is meant for adding larger amounts of event listeners. This currently only works on elements already present (getElementById).
 
 Each is functionally equivalent but preferred based on circumstances.
@@ -35,19 +34,6 @@ usage:
 var el = document.createElement('button');
 listen(el, 'click', function() {alert('clicked')});
 ```
-
-<h5>listen() is for adding individual event listeners.<br></h5>
-
-el is the dynamically created DOM Element.<br>
-type refers to a type of input event.<br>
-fn is the callback function called on the input event.<br>
-
-is equivalent to:
-```
-var el = document.createElement('button');
-el.addEventListener(type, fn);
-```
-
 ----
 # listenAt(id, type, fn) 
 
@@ -56,17 +42,6 @@ usage:
 <button id="btn">click me</button>
 listenAt('btn', 'click', function() {alert('clicked')});
 ```
-
-listenAt() is also for adding individual event listeners. This is the same as above, except that id refers to an HTML element declared inside the HTML.
-
-is equivalent to:
-
-```
-<button id="btn">click me</button>
-var el = document.getElementById('btn');
-el.addEventListener('click', function() {alert('clicked')});
-```
-
 ----
 
 # inputC(ic)
@@ -215,10 +190,9 @@ Is the same as above, but returns a multi-line textfield. The third argument set
 ----
 # post(el)
 
-Empties the document body. Takes a dynamically created HTMLElement and appends it to the empty document.<br>
+Empties the document body and appends a dynamically created HTMLElement to the empty document.<br>
 Mainly used to publish a root HTMLElement node to the DOM.
 
-is equivalent to:
 
 ```
 document.body.innerHTML = '';
