@@ -1,13 +1,15 @@
 1) div.cc - Extend object prototype of HTMLElement and add function to create and append child simultaneously?
 1a) div.<attr> - Extend object prototype of HTMLElement to change height, width, etc. attributes through HTMLElement.setAttribute
-Consider functional and otherwise obvious issues with extending a native object prototype. Alternatives?
+Consider functional and otherwise obvious issues with extending a native object prototype. Alternatives? Probably just as well to use jQuery but less is more.
 
 2) Allow every id in the makeIC function to update model/view
 
-3) Expand the post() function to append element to chosen destination node
+4) Expand inputC() function to accept ic object referencing dynamically created els
 
-4) Expand inputC() function to accept ic object with dynamically created els
+3) Expand the post() function to append element to chosen destination node
 
 5) Create css() function which takes a styles object and applies styles to dynamically created HTML Elements
 
 6) Expand mdl card function to produce complete card component or all card subcomponents
+
+7) Complete documentation for doc object
