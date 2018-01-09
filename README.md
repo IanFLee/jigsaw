@@ -140,26 +140,19 @@ document.createElement(type);
 ```
 If doc.ce() is not given an argument, type defaults to 'div'.
 Use 'btn' for 'buttton' and 'in' for 'input'.
-
 ----
+Create and append text node simultaneously.
 ```
 doc.atn(element, text);
 is
 var text = document.createTextNode(text);
 element.appendChild(text);
 ```
-Create and append text node simultaneously.
-
 ----
+Append multiple children simultaneously.
 ```
 doc.amc(parent, [array of children]);
-is
-for (var child of arr) {
-      parent.appendChild(child);
-    }
 ```
-Append multiple children simultaneously.
-
 ----
 
 # The mdl object
@@ -206,8 +199,14 @@ Is the same as above, but returns a multi-line textfield. The third argument set
 Empties the document body and appends a dynamically created HTMLElement to the empty document.<br>
 Mainly used to publish a root HTMLElement node to the DOM.
 
+----
+# style(el, obj)
+
+Adds styling to an element
 
 ```
-document.body.innerHTML = '';
-document.body.appendChild(el);
-```
+style(btn1, {
+  border: 'solid',
+  width: '50vw',
+  height: '50vh'
+});
