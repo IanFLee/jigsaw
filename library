@@ -1,7 +1,9 @@
 function cl(x) {
   console.log(x);
 }
-function inputC(ic){
+
+
+function inputCAt(ic){
     // for each element in the ic object
     for (let id in ic) {
      var el = document.getElementById(id);
@@ -26,17 +28,48 @@ function inputC(ic){
   
     }
   }
+
+function inputC(ic){
+    // for each element in the ic object
+    for (let id in ic) {
+     var el = ic[id].name;
+
+      
+      // fns is an object with input type keys and function values
+      var fns = ic[id];
+      
+      // for each input type in the object
+      for (let type in fns) {
+      
+        // arr is array of functions to add for that input type
+        var arr = fns[type];
+        
+        for (let theFn in arr) {
+        //
+        // FN is function
+          var FN = arr[theFn];
+        el.addEventListener(type, FN);
+      } 
+        // Add listener to element that will update model or view
+      }
+  
+    }
+  }
+
 function listen(el, type, fn) {
     el.addEventListener(type, fn);
 }
+
 function listenAt(id, type, fn) {
   var id = document.getElementById(id)
   id.addEventListener(type, fn);
 }
+
 function post(el) {
   document.body.innerHTML = '';
   document.body.appendChild(el);
 }
+
 function htmlElShort(type) {
   switch(type) {
     case undefined : type = 'div'; break;
@@ -48,27 +81,35 @@ function htmlElShort(type) {
 }
 
 var doc = {
+
   ce : function(type) {
       type = htmlElShort(type);
       return document.createElement(type);
   },
+  
   atn : function(el, text) {
     var text = document.createTextNode(text);
     el.appendChild(text);
   },
+  
   amc : function(el, arr) {
     for (var child of arr) {
       el.appendChild(child);
     }
   },
+  
   class : function(name) {
     return document.getElementsByClassName(name);
   },
+  
   id : function(id) {
     return document.getElementById(id);
   }
 };
+
+
 var mdl = {
+
   parentGrid : function(size) {
   // Create parent grid
     var grid = document.createElement('div');
@@ -78,12 +119,14 @@ var mdl = {
     }
     return grid;
   },
+  
   childGrid : function() {
   // Create child grid
     var grid = document.createElement('div');
     grid.className = "mdl-grid mdl-cell mdl-cell--12-col";
     return grid;
   },
+  
   col : function(desktopSize, tabletSize, phoneSize) {
   // Create MDL cell
     var desktopClass = '', tabletClass = '', phoneClass = '';
@@ -100,6 +143,7 @@ var mdl = {
     cell.className = "mdl-cell"+desktopClass+tabletClass+phoneClass;
     return cell;
   },
+  
   input: function(id, text) {
   // Create MDL 'textfield'/text input
     var div = document.createElement('div');
@@ -117,6 +161,7 @@ var mdl = {
     componentHandler.upgradeElement(div);
     return div;
   },
+  
   multiInput: function(id, text, rows) {
   // Create multi-line MDL 'textfield' input
     var div = document.createElement('div');
@@ -135,6 +180,7 @@ var mdl = {
     componentHandler.upgradeElement(div);
     return div;
   },
+  
   cardTitle: function(text) {
     var div = doc.ce();
     div.className = "mdl-card__title";
@@ -144,11 +190,15 @@ var mdl = {
     return div;
   }
 };
+
+
 function ceListen(elmType, evtType, fn) {
   var x = doc.ce(elmType);
   listen(x, evtType, fn);
   return x;
 }
+
+
 function borderDiv(color, width, height) {
   var elm = doc.ce();
   elm.style.border = 'solid '+color;
