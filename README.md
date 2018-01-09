@@ -18,11 +18,12 @@ A library of MVC-type functions
 
 <h3>Similarities and Differences </h3>
 
-The following three functions are all augmentations of addEventListener.
+The following three functions are all abstractions of addEventListener.
 
- - listenAt() is for DOM elements already present in the HTML.
- - listenFor() is for DOM elements that have been created dynamically in the JS.
- - inputC() is meant for adding larger amounts of event listeners. This currently only works on elements already present (getElementById).
+ - listenAt() is for DOM elements already present in the HTML
+ - listen() is for DOM elements that have been created dynamically in the JS
+ - inputCAt() is meant for adding larger amounts of event listeners by the element's id
+ - inputC() is meant for adding larger amounts of event listeners by references to dynamically created elements
 
 Each is functionally equivalent but preferred based on circumstances.
 
@@ -44,7 +45,7 @@ listenAt('btn', 'click', function() {alert('clicked')});
 ```
 ----
 
-# inputC(ic)
+# inputC(ic) or inputCAt(ic)
 
 <h5>inputC() is for adding multiple event listeners.</h5>
 
@@ -55,7 +56,7 @@ var ic = { /*input controller object*/ };
 inputC(ic);
 ```
 
-It takes an 'input controller' object and uses the values to attach event listeners to DOM nodes.
+It takes an 'input controller' object and uses the values to attach event listeners.
 
 An input controller looks like this:
 
@@ -66,33 +67,49 @@ var save = function() { /*save*/ };
 var turnBorderBlue = function() { /*turn border blue*/ };
 var login = function() { /*login*/ };
 
-// ic object declaration
+// ic object declaration for inputCAt()
 var ic = {
   'saveButton' : {
-    click : {
-      turnRed : turnRed,
-      save : save
-    },
-    hover : {
-      turnBorderBlue : turnBorderBlue
-    }
+    click : [turnRed, save],
+    hover : [turnBorderBlue]
   },
   'loginButton' : {
-    click : {
-      login : login
-    }
+    click : [login]
 };
+
+// ic object declaration for inputC()
+var ic = {
+  saveButton : {
+    el : saveButton,
+    click : [turnRed, save],
+    hover : [turnBorderBlue],
+  },
+  loginButton : {
+    el : loginButton,
+    click : [login]
+  }
+};
+
 ```
 
 This follow the structure:
 ```
 var ic = {
   <id of element to which will the listener will be added> : {
-    <event type> : {
-      <function to run on event>
-    }
+    <event type> : [<array of functions to run on event>]
   }
 };
+inputCAt(ic)
+
+or
+
+var ic = {
+  <semantic name of element> : {
+    el : <reference to HTMLObject element>,
+    <event type> : [<array of functions to run on event]
+  }
+};
+inputC(ic);
 ```
 <h5>inputC() works well with models</h5>
 
