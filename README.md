@@ -14,11 +14,7 @@ A library of MVC-type functions
 
 ----
 
-<h1>listen(), listenAt(), and inputC()</h1>
-
-<h3>Similarities and Differences </h3>
-
-The following three functions are all abstractions of addEventListener.
+<h3>Abstractions of addEventListener.</h3>
 
  - listenAt() is for DOM elements already present in the HTML
  - listen() is for DOM elements that have been created dynamically in the JS
