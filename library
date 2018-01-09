@@ -206,3 +206,10 @@ function borderDiv(color, width, height) {
   elm.style.height = height+'vh';
   return elm;
 }
+
+function style(el, obj) {
+  for (let style in obj) {
+    el.style[style] = obj[style];
+  }
+}
+
