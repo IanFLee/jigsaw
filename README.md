@@ -1,5 +1,5 @@
 # jigsaw
-A library of MVC-type functions
+A library of client-side MVC-type functions
 <ul>
  <li><a href="#listen-listenat-and-inputc">listener functions make adding event listeners quicker and easier</a></li>
  <li><a href="#the-doc-object">the doc object is shorthand for document functions</a></li>
