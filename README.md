@@ -135,7 +135,9 @@ The doc object quickens certain document processes with shorthand.
 
 ```
 doc.ce(type);
+
 is
+
 document.createElement(type);
 ```
 If doc.ce() is not given an argument, type defaults to 'div'.
@@ -144,7 +146,9 @@ Use 'btn' for 'buttton' and 'in' for 'input'.
 Create and append text node simultaneously.
 ```
 doc.atn(element, text);
+
 is
+
 var text = document.createTextNode(text);
 element.appendChild(text);
 ```
